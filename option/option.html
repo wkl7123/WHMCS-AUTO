@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<title>WHMCS Autofill Setting</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../css/bootstrap-slider.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css" rel="stylesheet">
+
+	<style>
+		.container {
+			width: 800px;
+		}
+		
+		.options {
+			margin-left: 20px;
+		}
+		
+		.jumbotron {
+			margin-top: 30px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			text-align: center;
+		}
+
+		.sld{
+			margin-top:10px;
+		}
+
+		.row{
+			height: 55px;
+		}
+
+        .sld-text{
+			height: 55px;
+			line-height: 55px;
+			color:red;
+			font-size:1.2em;
+		}
+
+		.value{
+			color:#337ab7;
+		}
+
+		.save-btn{
+			margin-left: 40px;
+		}
+
+		.checkbox, .sld, .sld-text{
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>WHMCS AUTO</h1>
+			<p>WHMCS自动化填表配置</p>
+		</div>
+
+		<h2>折扣配置</h2>
+
+		<div class="container options">
+			<div class="row">
+				<div class="checkbox col-sm-4">
+					<input id="checkbox-month" type="checkbox" data-key="month" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox-month">单月折扣</label>
+				</div>
+				<div class="col-sm-4 sld">
+					<input id="month" class="form-control" data-slider-id='monthSlider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
+				</div>
+				<div class="col-sm-4 sld-text">
+					<span id="monthCurrentSliderValLabel"><i class="fa fa-gift" aria-hidden="true"></i>: <i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="value" id="monthSliderVal">0</span><i class="fa fa-percent" aria-hidden="true"></i></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox col-sm-4">
+					<input id="checkbox-quarter" type="checkbox" data-key="quarter" data-checked="true" data-unchecked="false"
+						data-default="true">
+					<label for="checkbox-quarter">季度折扣</label>
+				</div>
+				<div class="col-sm-4 sld">
+					<input id="quarter" class="form-control" data-slider-id='quarterSlider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
+				</div>
+				<div class="col-sm-4 sld-text">
+					<span id="quarterCurrentSliderValLabel"><i class="fa fa-gift" aria-hidden="true"></i>: <i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="value" id="quarterSliderVal">0</span><i class="fa fa-percent" aria-hidden="true"></i></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox col-sm-4">
+					<input id="checkbox-semiAnnual" type="checkbox" data-key="semiAnnual" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox-semiAnnual">半年折扣</label>
+				</div>
+				<div class="col-sm-4 sld">
+					<input id="semiAnnual" class="form-control" data-slider-id='semiAnnualSlider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
+				</div>
+				<div class="col-sm-4 sld-text">
+					<span id="semiAnnualCurrentSliderValLabel"><i class="fa fa-gift" aria-hidden="true"></i>: <i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="value" id="semiAnnualSliderVal">0</span><i class="fa fa-percent" aria-hidden="true"></i></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox col-sm-4">
+					<input id="checkbox-annual" type="checkbox" data-key="annual" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox-annual">一年折扣</label>
+				</div>
+				<div class="col-sm-4 sld">
+					<input id="annual" class="form-control" data-slider-id='annualSlider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
+				</div>
+				<div class="col-sm-4 sld-text">
+					<span id="annualCurrentSliderValLabel"><i class="fa fa-gift" aria-hidden="true"></i>: <i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="value" id="annualSliderVal">0</span><i class="fa fa-percent" aria-hidden="true"></i></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox col-sm-4">
+					<input id="checkbox-biennial" type="checkbox" data-key="biennial" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox-biennial">两年折扣</label>
+				</div>
+				<div class="col-sm-4 sld">
+					<input id="biennial" class="form-control" data-slider-id='biennialSlider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
+				</div>
+				<div class="col-sm-4 sld-text">
+					<span id="biennialCurrentSliderValLabel"><i class="fa fa-gift" aria-hidden="true"></i>: <i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="value" id="biennialSliderVal">0</span><i class="fa fa-percent" aria-hidden="true"></i></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox col-sm-4">
+					<input id="checkbox-triennial" type="checkbox" data-key="triennial" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox-triennial">三年折扣</label>
+				</div>
+				<div class="col-sm-4 sld">
+					<input id="triennial" class="form-control" data-slider-id='triennialSlider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1"/>
+				</div>
+				<div class="col-sm-4 sld-text">
+					<span id="triennialCurrentSliderValLabel"><i class="fa fa-gift" aria-hidden="true"></i>: <i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="value" id="triennialSliderVal">0</span><i class="fa fa-percent" aria-hidden="true"></i></span>
+				</div>
+			</div>
+			<div class="raw">
+	        	<div class="col-sm-4 button-wrap">
+		        	<button id="select-btn" class="btn btn-warning" style="margin-left:55px;">全部选择</button>
+		        </div>
+		        <div class="col-sm-4 button-wrap">
+		        	<button id="reset-btn" class="btn btn-info" style="margin-left:75px;">恢复原价</button>	
+		        </div>
+		        <div class="col-sm-4 button-wrap">
+		        	<button id="save-btn" class="btn btn-success" style="margin-left:83px;">保存设置</button>
+		        </div>
+	        </div>
+		</div>
+
+		<!-- <h2>优化</h2> -->
+
+		<!-- <div class="container options">
+			<div class="row">
+				<div class="checkbox">
+					<input id="checkbox2-1" type="checkbox" data-key="enable_gpa_query" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox2-1">启用绩点查询</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox">
+					<input id="checkbox2-2" type="checkbox" data-key="fold_index_socre" data-checked="false" data-unchecked="true" data-default="false">
+					<label for="checkbox2-2">在首页显示成绩</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox">
+					<input id="checkbox2-3" type="checkbox" data-key="optimize_score" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox2-3">优化成绩查询</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox">
+					<input id="checkbox2-4" type="checkbox" data-key="optimize_core_course" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox2-4">优化核心课程成绩</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkbox">
+					<input id="checkbox2-5" type="checkbox" data-key="optimize_edulist" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox2-5">优化修业查看</label>
+				</div>
+			</div>
+            <div class="row">
+				<div class="checkbox">
+					<input id="checkbox2-6" type="checkbox" data-key="show_ad" data-checked="true" data-unchecked="false" data-default="true">
+					<label for="checkbox2-6">显示推荐内容</label>
+				</div>
+			</div>
+		</div> -->
+        <!-- <br> -->
+	</div>
+
+	<div class="footer">
+		<hr style="width: 40%">
+		<div class="container">
+			<p class="text-muted text-center">
+				wkl7123 <span id="ext-version"></span> |
+				<a href="https://github.com/wkl7123/WHMCS-Auto" target="_blank">WHMCS-AUTO Project</a>
+			</p>
+		</div>
+	</div>
+
+	<!-- <script src="../content_script/core/option.js"></script>
+	<script src="../library/option.js"></script> -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-slider.min.js"></script>
+	<script src="../js/ready.js"></script>
+</body>
+
+</html>
