@@ -1,6 +1,6 @@
 # WHMCS-AUTO
 
-安装该插件后先去option页面配置折扣,保存后退出。
+安装该插件后先去option页面(插件图标右键选择Options)配置折扣, 保存后退出。
 
 ![capture1](img/readme/capture1.jpg)
 
@@ -13,6 +13,6 @@
 
 ![capture3](img/readme/capture3.jpg)
 
-对里面的每个Option的Pricing右边第一个空格填入单月价格后再点插件图标，就会把整行的价格都自动填上(`单月价格x月份数x折扣`)
+对里面的每个`Option`的`Pricing`右边第一个空格填入单月价格后再点插件图标，就会把整行的价格都自动填上(`单月价格x月份数x折扣`)
 
 
