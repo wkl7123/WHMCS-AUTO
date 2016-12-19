@@ -14,7 +14,7 @@
   ],
   "options_page": "option/option.html",
   "content_scripts": [{  
-       "matches": ["http://*/*","https://*/*"],   
+       "matches": ["*://*/admin/configproductoptions*"],   
        "js": [
           "js/jquery.min.js",
           "js/modifyButton.js",
